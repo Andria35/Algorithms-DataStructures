@@ -2,6 +2,7 @@
 #include <vector>
 #include "array.hpp"
 #include <unordered_map>
+#include <string>
 
 /*
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -36,4 +37,8 @@ std::vector<int> two_sum(const std::vector<int>& nums, int target) {
     }
 
     return result;
+}
+
+std::string longestCommonPrefix(std::vector<std::string>& strs) {
+
 }
