@@ -40,5 +40,11 @@ std::vector<int> two_sum(const std::vector<int>& nums, int target) {
 }
 
 std::string longestCommonPrefix(std::vector<std::string>& strs) {
+    if(strs.empty()) { return ""; }
+    std::string firstString = strs.at(0);
+    int prefixLength = firstString.length();
 
+    for (int i = 1; i < strs.size(); i++) {
+        std::string currentString = strs.at(i);
+    }
 }
