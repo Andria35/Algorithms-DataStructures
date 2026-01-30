@@ -46,5 +46,41 @@ std::string longestCommonPrefix(std::vector<std::string>& strs) {
 
     for (int i = 1; i < strs.size(); i++) {
         std::string currentString = strs.at(i);
+        if(currentString.length() < prefixLength) { prefixLength = currentString.length();}
+
+        for (int j = 0; j < prefixLength; j++) {
+            if (firstString[j]!= currentString[j]) {
+                prefixLength = j;
+                break;
+            }
+        }
+        if (prefixLength == 0) return "";
+
     }
+    return firstString.substr(0, prefixLength);
+}
+
+int removeDuplicates(std::vector<int>& nums) {
+    if (nums.empty()) return 0;
+
+    int k = 1;
+    for(int i = 0; i < nums.size(); i++) {
+        if(nums[i] != nums[i-1]) {
+            nums[k] = nums[i];
+            k++;
+        }
+    }
+
+    return k;
+}
+
+int removeElement(std::vector<int>& nums, int val) {
+    int k = 0;
+    for(int i = 1; i < nums.size(); i++) {
+        if(nums[i] != val) {
+            if(k < i) nums[k] = nums[i];
+            k++;
+        }
+    }
+    return k;
 }
