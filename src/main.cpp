@@ -14,10 +14,10 @@ void print_vector(const std::vector<int>& v) {
 
 int main() {
 
-    std::vector<int> vector_two_sum = {3, 3};
-    int target = 6;
+    std::vector<int> binarySearchVector = {1, 2, 3, 5, 7, 9};
+    int target = 9;
 
-    std::vector<int> two_sum_result = two_sum(vector_two_sum, target);
-    print_vector(two_sum_result);
+    // print_vector(two_sum_result);
+    std::cout << binarySearch(binarySearchVector, target) << std::endl;
     return 0;
 }
