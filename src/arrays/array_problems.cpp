@@ -103,3 +103,34 @@ int binarySearch(std::vector<int>& nums, int target) {
 
     return -1; // not found
 }
+
+int searchInsert(std::vector<int>& nums, int target) {
+    if(nums.empty()) return -1;
+    int left = 0;
+    int right = nums.size() - 1;
+
+    while(left <= right) {
+        int mid = left + (right - left) / 2;
+        if(target == nums[mid]) return mid;
+        if(target < nums[mid]) right = mid - 1;
+        if(target > nums[mid]) left = mid + 1;
+    }
+    return left;
+}
+
+std::vector<int> plusOne(std::vector<int>& digits) {
+
+    for(int i = digits.size() - 1; i >= 0; i--) {
+        if(digits[i] != 9) {
+            digits[i]++;
+            return digits;
+        }
+        if(i == 0) {
+            digits[0] = 1;
+            digits.push_back(0);
+        } else {
+        digits[i] = 0;
+        }
+    }
+    return digits;
+}
