@@ -8,3 +8,6 @@ std::string longestCommonPrefix(std::vector<std::string>& strs);
 int removeDuplicates(std::vector<int>& nums);
 int removeElement(std::vector<int>& nums, int val);
 int binarySearch(std::vector<int>& nums, int target);
+int searchInsert(std::vector<int>& nums, int target);
+std::vector<int> plusOne(std::vector<int>& digits);
+void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n);
