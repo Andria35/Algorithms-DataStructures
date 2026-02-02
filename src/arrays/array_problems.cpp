@@ -101,7 +101,7 @@ int binarySearch(std::vector<int>& nums, int target) {
         }
     }
 
-    return -1; // not found
+    return -1;
 }
 
 int searchInsert(std::vector<int>& nums, int target) {
