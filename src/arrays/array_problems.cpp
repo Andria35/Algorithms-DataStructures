@@ -151,3 +151,18 @@ void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
         k--;
     }
 }
+
+TreeNode* sortedArrayToBST(std::vector<int>& nums) {
+
+    auto build = [&](auto&& self, int l, int r) -> TreeNode* {
+        if(l > r) return nullptr;
+        int mid = l + (r - l) / 2;
+        TreeNode* root = new TreeNode(nums[mid]);
+        root->left = self(self, l, mid - 1);
+        root->right = self(self, mid + 1, r);
+
+        return root;
+    };
+
+    return build(build, 0, nums.size() - 1);
+}
