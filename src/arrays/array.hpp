@@ -22,3 +22,5 @@ struct TreeNode
 };
 
 TreeNode* sortedArrayToBST(std::vector<int>& nums);
+
+std::vector<std::vector<int>> generate(int numRows);
