@@ -23,4 +23,5 @@ struct TreeNode
 
 TreeNode* sortedArrayToBST(std::vector<int>& nums);
 
+// Pascal's triangle
 std::vector<std::vector<int>> generate(int numRows);
