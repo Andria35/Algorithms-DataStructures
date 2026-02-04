@@ -25,3 +25,6 @@ TreeNode* sortedArrayToBST(std::vector<int>& nums);
 
 // Pascal's triangle
 std::vector<std::vector<int>> generate(int numRows);
+
+// pascal's triangle II
+std::vector<int> getRow(int rowIndex);

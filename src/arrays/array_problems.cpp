@@ -169,16 +169,23 @@ TreeNode* sortedArrayToBST(std::vector<int>& nums) {
 
 std::vector<std::vector<int>> generate(int numRows) {
     std::vector<std::vector<int>> result;
-    for(int i = 0; i < numRows; i++) {
-        if(i == 0) result.push_back({1});
-        // int lastIndex = i - 1;
-        std::vector<int> row;
-        for(int j = 0; j < i; j++) {
-            if(j == 0 || j == i - 1) row.push_back(1);
-            row.push_back(result[i-1][j-1] + result[i-1][j]);
-        }
+for (int i = 0; i < numRows; i++) {
+        std::vector<int> row(i + 1, 1);        
+        for (int j = 1; j < i; j++) {
+            row[j] = result[i - 1][j - 1] + result[i - 1][j];
+        }        
         result.push_back(row);
     }
 
+    return result;
+}
+
+std::vector<int> getRow(int rowIndex) {
+    std::vector<int> result = {1};
+    long long current = 1;
+    for(int k = 1; k <= rowIndex; k++) {
+        current = current * (rowIndex - k + 1) / k;
+        result.push_back((int)current);
+    }
     return result;
 }
